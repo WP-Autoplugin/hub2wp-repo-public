@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="hub2wp Plugin Repo">
+  <meta property="og:description" content="hub2wp is a free and open, GitHub-based plugin repository.">
+  <meta property="og:image" content="https://hub2wp.com/img/hub2wp-og.png">
+  <title>hub2wp Plugin Repo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-100">
+  <div id="header"></div>
+
+  <main class="container mx-auto p-4">
+    <div class="h2wp-top-bar flex flex-col sm:flex-row justify-between items-center mb-4">
+      <div class="h2wp-popular-tags mb-2 sm:mb-0">
+        <a href="/" class="h2wp-tag">Featured</a>
+        <a href="/?filter=all" class="h2wp-tag">All</a>
+        <a href="/?tag=woocommerce" class="h2wp-tag">WooCommerce</a>
+        <a href="/?tag=seo" class="h2wp-tag">SEO</a>
+        <a href="/?tag=artificial-intelligence" class="h2wp-tag">AI</a>
+        <a href="/?tag=security" class="h2wp-tag">Security</a>
+        <a href="/?tag=social" class="h2wp-tag">Social</a>
+        <a href="/?tag=forms" class="h2wp-tag">Forms</a>
+        <a href="/?tag=gallery" class="h2wp-tag">Gallery</a>
+        <a href="/?tag=caching" class="h2wp-tag">Caching</a>
+      </div>
+      <form id="searchForm" class="h2wp-search-form flex">
+        <input type="text" id="searchInput" placeholder="Search plugins…" class="border p-2" />
+        <button type="submit" class="h2wp-button h2wp-button-primary ml-2">Search</button>
+      </form>
+    </div>
+
+    <div id="plugins" class="h2wp-plugins-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
+    <div id="pagination" class="h2wp-pagination flex justify-center mt-4"></div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>

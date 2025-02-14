@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="hub2wp Plugin Repo">
+  <meta property="og:description" content="hub2wp is a free and open, GitHub-based plugin repository.">
+  <meta property="og:image" content="https://hub2wp.com/img/hub2wp-og.png">
+  <title>Plugin Details - hub2wp Plugin Repo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.9/purify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="bg-gray-50">
+  <div id="header"></div>
+
+  <div class="plugin-header bg-white border-b border-gray-200">
+    <div class="container mx-auto px-6 py-8">
+      <div class="flex flex-col items-center lg:flex-row lg:items-start gap-6">
+        <!-- Plugin icon -->
+        <div class="plugin-icon w-32 h-32 bg-gray-100 border border-gray-200 rounded flex items-center justify-center">
+          <div id="pluginIconSkeleton" class="w-full h-full skeleton skeleton-image"></div>
+          <img id="pluginIcon" src="/placeholder-icon.png" alt="" class="max-w-full h-auto hidden">
+        </div>
+        
+        <!-- Plugin title and meta -->
+        <div class="flex-1 text-center lg:text-left">
+          <div id="pluginTitleSkeleton" class="skeleton skeleton-text w-1/2 mx-auto lg:mx-0 mb-2"></div>
+          <h1 id="pluginTitle" class="text-3xl font-bold text-gray-900 mb-2 hidden">Plugin Title</h1>
+          
+          <div id="pluginAuthorSkeleton" class="skeleton skeleton-text w-1/4 mx-auto lg:mx-0 mb-4"></div>
+          <div id="pluginAuthorContent" class="text-sm text-gray-600 mb-4 hidden">
+            <span>By <a href="#" id="pluginAuthorLink" class="text-blue-500 hover:underline">Author</a></span>
+          </div>
+          
+          <div id="pluginButtonsSkeleton" class="flex justify-center lg:justify-start gap-4">
+            <div class="skeleton h-10 w-24 rounded"></div>
+            <div class="skeleton h-10 w-32 rounded"></div>
+          </div>
+          <div id="pluginButtons" class="flex items-center justify-center lg:justify-start gap-4 hidden">
+            <a href="#" id="downloadButton" class="h2wp-button h2wp-button-primary">Download</a>
+            <a href="#" id="githubButton" class="h2wp-button h2wp-button-secondary">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-tabs border-b border-gray-200 bg-white">
+    <div class="container mx-auto px-6">
+      <nav class="flex justify-center lg:justify-start -mb-px">
+        <a href="#" class="tab-link border-b-2 border-transparent py-4 px-3 lg:px-6 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="description">Readme</a>
+        <a href="#" class="tab-link border-b-2 border-transparent py-4 px-3 lg:px-6 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="meta">Meta</a>
+        <a href="#" class="tab-link border-b-2 border-transparent py-4 px-3 lg:px-6 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="changelog">Changelog</a>
+        <a href="#" class="tab-link border-b-2 border-transparent py-4 px-3 lg:px-6 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="installation">Installation</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-6 py-8">
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Main content -->
+      <div class="flex-1 min-w-0 overflow-hidden">
+        <div id="description" class="tab-content bg-white p-6 rounded-lg shadow-sm">
+          <div id="descriptionSkeleton">
+            <div class="skeleton skeleton-text w-3/4 mb-4"></div>
+            <div class="skeleton skeleton-text w-full mb-2"></div>
+            <div class="skeleton skeleton-text w-full mb-2"></div>
+            <div class="skeleton skeleton-text w-2/3 mb-4"></div>
+            <div class="skeleton skeleton-text w-full mb-2"></div>
+            <div class="skeleton skeleton-text w-5/6 mb-2"></div>
+          </div>
+          <div id="descriptionContent" class="hidden"></div>
+        </div>
+        <div id="installation" class="tab-content hidden bg-white p-6 rounded-lg shadow-sm">Loading installation...</div>
+        <div id="changelog" class="tab-content hidden bg-white p-6 rounded-lg shadow-sm">Loading changelog...</div>
+        <div id="meta" class="tab-content hidden bg-white p-6 rounded-lg shadow-sm">Loading meta...</div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="lg:w-80 flex-shrink-0">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="text-lg font-semibold mb-6">Plugin Information</h2>
+
+          <div id="metadataSkeleton" class="space-y-3 text-sm">
+            <div class="flex justify-between">
+              <div class="skeleton skeleton-text w-20"></div>
+              <div class="skeleton skeleton-text w-24"></div>
+            </div>
+            <div class="flex justify-between">
+              <div class="skeleton skeleton-text w-20"></div>
+              <div class="skeleton skeleton-text w-24"></div>
+            </div>
+            <div class="flex justify-between">
+              <div class="skeleton skeleton-text w-20"></div>
+              <div class="skeleton skeleton-text w-24"></div>
+            </div>
+          </div>
+          <div id="metadataContent" class="hidden">
+            <!-- Plugin Meta -->
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between metadata meta-version">
+                <span class="text-gray-600">Version:</span>
+                <span id="metaVersion" class="font-medium">Unknown</span>
+              </div>
+              <div class="flex justify-between metadata meta-requires-wp">
+                <span class="text-gray-600">Requires WP:</span>
+                <span id="metaRequiresWp" class="font-medium">Unknown</span>
+              </div>
+              <div class="flex justify-between metadata meta-tested-wp">
+                <span class="text-gray-600">Tested up to:</span>
+                <span id="metaTestedWp" class="font-medium">Unknown</span>
+              </div>
+              <div class="flex justify-between metadata meta-requires-php">
+                <span class="text-gray-600">Requires PHP:</span>
+                <span id="metaRequiresPHP" class="font-medium">Unknown</span>
+              </div>
+              <div class="flex justify-between metadata meta-created">
+                <span class="text-gray-600">Created:</span>
+                <span id="metaCreated" class="font-medium">Unknown</span>
+              </div>
+              <div class="flex justify-between metadata meta-last-updated">
+                <span class="text-gray-600">Last updated:</span>
+                <span id="metaLastUpdated" class="font-medium">Unknown</span>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-200 my-6"></div>
+
+            <!-- Stars -->
+            <div class="mt-6">
+              <div id="starsContent" class="flex items-center gap-2">
+                <span id="starsIcon" class="w-6 h-6 text-yellow-500"></span>
+                <span id="starsCount" class="font-semibold">0</span>
+                <span class="text-gray-600">stars on GitHub</span>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-200 my-6"></div>
+
+            <!-- Links: "GitHub Plugin Page" » & "Plugin Homepage »" -->
+            <div class="mt-6">
+              <div id="linksContent" class="space-y-3 text-sm">
+                <a href="#" id="linkGitHub" class="block text-blue-500 hover:underline">GitHub Plugin Page &raquo;</a>
+                <a href="#" id="linkHomepage" class="block text-blue-500 hover:underline">Plugin Homepage &raquo;</a>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-200 my-6"></div>
+
+            <!-- Tags -->
+            <div class="mt-6">
+              <div id="tagsContent" class="flex flex-wrap gap-2"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/plugin.js" type="module"></script>
+</body>
+</html>
