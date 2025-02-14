@@ -1,6 +1,6 @@
 # hub2wp
 
-hub2wp is a free and open, GitHub-based plugin repository that makes it easy to discover and install WordPress plugins hosted on GitHub. 
+[hub2wp](https://hub2wp.com) is a free and open, GitHub-based plugin repository that makes it easy to discover and install WordPress plugins hosted on GitHub. 
 
 It works by scanning public GitHub repositories that have the `wordpress-plugin` topic. It is a read-only service, and no code is hosted on hub2wp. All plugin details are retrieved directly from GitHub.
 
